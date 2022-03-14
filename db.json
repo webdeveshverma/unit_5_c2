@@ -1,0 +1,14 @@
+{
+  "houses": [
+    {
+      "name": "Devesh Verma",
+      "ownerName": "drvfg",
+      "address": "Phatan ka bagg, Dhamera Adda buladshahr",
+      "areaCode": "2023001",
+      "rent": "20301",
+      "bachelor": true,
+      "married": true,
+      "id": 1
+    }
+  ]
+}
