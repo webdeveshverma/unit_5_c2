@@ -1,103 +1,57 @@
- 
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-
-
-
-
+import { useState } from "react";
+import axios from "axios"
 
 export const AddHouse = () => {
+
+  const [user,setUser] =useState()
+
   
-  const [inputData,setinputData]=useState({});
-  const [data,setData]=useState([]);
- 
-   const handleChange=(e)=>{
-     let {className,value,checked,type}=e.target
-     value=type==="checkbox" ? checked : value;
-     setinputData({
-       ...inputData,
-       [className]: value
-     })
-    }
      const handleSubmit=(e)=>{
-       e.preventDefault();
+       e.preventDefault()
+        
+       axios.post("http://localhost:8080/houses",user).then(()=>{
 
-       axios.post("http://localhost:8080/houses",inputData).then(()=>{
-         alert("User Create Successfully")
+       setUser({})
        })
-      }
-     
-      const getData=()=>{
-        axios.get("http://localhost:8080/houses").then((res)=>{
-          setData(res.data);
-        })
-      }
 
-      useEffect(()=>{
-        getData();
-      },[inputData])
-   
+     }
+     const handleChange=(e)=>{
+       let {className,value,checked,type} =e.target;
+       value =type ==="checked" ? checked:value;
+       setUser({...user,[className]:value})
+     }
+
   return (
     <div className="addHouseContainer">
       <form onSubmit={handleSubmit}>
         <label>name</label>
-        <input type="text" className="name" onChange={handleChange} id="name"   required />
+        <input type="text" className="name" onChange={handleChange} required />
         <br />
         <label>ownerName</label>
-        <input  type="text" className="ownerName" onChange={handleChange} id="ownerName" required />
+        <input  type="text" className="ownerName" onChange={handleChange} required />
         <br />
         <label>address</label>
-        <input  type="text" className="address" onChange={handleChange} id="address" required />
+        <input  type="text" className="address" onChange={handleChange} required />
         <br />
         <label>areaCode</label>
-        <input  type="text" className="areaCode" onChange={handleChange} id="areaCode" required />
+        <input  type="text" className="areaCode" onChange={handleChange} required />
         <br />
         <label>rent</label>
-        <input  type="text" className="rent" onChange={handleChange} id="rent" required />
+        <input  type="text" className="rent" onChange={handleChange} required />
         <br />
         <label>preferredTenant</label>
         <br />
         <label>bachelor</label>
-        <input  type="checkbox" id="bachelor" onChange={handleChange} className="bachelor" />
+        <input  type="checkbox" className="bachelor" onChange={handleChange} />
         <br />
         <label>married</label>
-        <input  type="checkbox" id="married" onChange={handleChange} className="married" />
+        <input  type="checkbox" className="married" onChange={handleChange}/>
         <br />
         <label>image</label>
-        <input  type="text" className="image" id="image" required />
+        <input  type="text" className="image" required onChange={handleChange}/>
         <br />
-        <input className="submitBtn" id="submit" type="submit" />
+        <input className="submitBtn" type="submit" />
       </form>
-      <table >
-        <thead>
-          <tr>
-            <th>Sl.no.</th>
-            <th>Name</th>
-            <th>Owner Name</th>
-            <th>Address</th>
-            <th>Area Code</th>
-            <th>Rent</th>
-            <th>Available For</th>
-             
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((e) => {
-            return (
-              <tr key={e.id} className="houseDetails">
-                <td className="houseId">{e.id}</td>
-                <td className="houseName">{e.name} </td>
-                <td className="ownersName">{e.ownerName}</td>
-                <td className="address">{e.address}</td>
-                <td className="areaCode">{e.areaCode}</td>
-                <td className="rent">{e.rent}</td>
-                 <td>{e.bachelor ? "bachoelors" : "married"}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-        </table>
     </div>
   );
 };

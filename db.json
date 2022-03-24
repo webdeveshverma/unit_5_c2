@@ -1,14 +1,65 @@
 {
   "houses": [
     {
-      "name": "Devesh Verma",
-      "ownerName": "drvfg",
-      "address": "Phatan ka bagg, Dhamera Adda buladshahr",
-      "areaCode": "2023001",
-      "rent": "20301",
-      "bachelor": true,
-      "married": true,
+      "name": "hjhfk",
+      "ownerName": "safkghjkd ",
+      "address": "asd",
+      "areaCode": "41",
+      "rent": "kgj",
+      "bachelor": "on",
+      "married": "on",
+      "image": "a",
       "id": 1
+    },
+    {
+      "name": "rajdfdu",
+      "ownerName": "ljdfdsld",
+      "address": "sdfs ",
+      "areaCode": "33333",
+      "rent": "4444",
+      "bachelor": "on",
+      "image": "s4s",
+      "id": 3
+    },
+    {
+      "name": "ajkhks",
+      "ownerName": "asd",
+      "address": "asda",
+      "areaCode": "22222",
+      "rent": "22222",
+      "married": "on",
+      "image": "2222",
+      "id": 4
+    },
+    {
+      "married": "on",
+      "rent": "as",
+      "areaCode": "3223",
+      "address": "23",
+      "ownerName": "23",
+      "name": "23",
+      "image": "223",
+      "id": 5
+    },
+    {
+      "name": "hghjghdfdjy",
+      "ownerName": "hjdfghjgh",
+      "address": "hjghdfjgkhg",
+      "areaCode": "hjdfdgkhg",
+      "rent": "9090909",
+      "bachelor": "on",
+      "image": "h ",
+      "id": 6
+    },
+    {
+      "name": "khujh",
+      "ownerName": "vrxsgh",
+      "address": "ggfjgfj",
+      "areaCode": "6787687",
+      "rent": "6878",
+      "married": "on",
+      "image": "h ",
+      "id": 7
     }
   ]
 }
